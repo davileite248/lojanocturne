@@ -1,0 +1,163 @@
+/* Estilo do delete.html (só elementos, sem classes) */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@400;500&display=swap");
+
+:root {
+  --fundo: #070707;
+  --borda: #2a1517;
+  --vermelho: #c1121f;
+  --vermelho-vivo: #e5262f;
+  --texto: #e8e2dc;
+  --suave: #9a918b;
+  --titulo: "Cinzel", Georgia, serif;
+  --corpo: "Inter", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { background: linear-gradient(180deg, #0c0506 0%, var(--fundo) 70%) fixed; }
+
+body {
+  min-height: 100vh;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 56px 24px 48px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 12px;
+  font-family: var(--corpo);
+  font-size: 14px;
+  color: var(--texto);
+}
+
+/* A lua de sangue aqui é maior e mais intensa: a página é de perigo */
+body::before {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  top: -110px;
+  right: 4%;
+  width: 320px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 32%, #ff4a3c 0%, #a30f17 52%, #3a0306 100%);
+  box-shadow: 0 0 100px 34px rgba(210, 25, 30, .42), 0 0 240px 100px rgba(150, 10, 20, .25);
+  opacity: .9;
+}
+
+br { display: none; }
+
+/* Título com aviso embaixo */
+h1 {
+  flex: 0 0 100%;
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  font-family: var(--titulo);
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  text-shadow: 0 0 24px rgba(229, 38, 47, .55);
+  border-bottom: 1px solid;
+  border-image: linear-gradient(90deg, var(--vermelho), transparent) 1;
+}
+
+h1::after {
+  content: "Esta ação apaga o cadastro de forma permanente.";
+  display: block;
+  margin-top: 10px;
+  font-family: var(--corpo);
+  font-size: 13px;
+  letter-spacing: normal;
+  text-transform: none;
+  text-shadow: none;
+  color: var(--suave);
+}
+
+/* Formulário */
+label {
+  flex: 0 0 100%;
+  font-family: var(--titulo);
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--suave);
+}
+
+label:has(+ input:focus) { color: var(--vermelho-vivo); }
+
+input[type="text"] {
+  flex: 1 1 240px;
+  margin-bottom: 32px;
+  padding: 14px 16px;
+  font: inherit;
+  font-size: 15px;
+  color: var(--texto);
+  background: #0a0606;
+  border: 1px solid var(--borda);
+  border-radius: 2px;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+input[type="text"]::placeholder { color: #5d544f; }
+input[type="text"]:hover { border-color: #6b2a2e; }
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--vermelho-vivo);
+  box-shadow: 0 0 0 3px rgba(229, 38, 47, .2);
+}
+
+input[type="button"] {
+  flex: 0 0 auto;
+  margin-bottom: 32px;
+  padding: 14px 32px;
+  font-family: var(--titulo);
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid #e0343c;
+  border-radius: 2px;
+  cursor: pointer;
+  background: linear-gradient(110deg, var(--vermelho) 40%, #ff5057 50%, var(--vermelho) 60%) 100% 0 / 260% 100%;
+  transition: background-position .6s ease, box-shadow .25s, transform .1s;
+}
+
+input[type="button"]:hover { background-position: 0 0; box-shadow: 0 0 26px rgba(229, 38, 47, .5); }
+input[type="button"]:active { transform: translateY(1px); }
+input[type="button"]:focus-visible { outline: 2px solid var(--vermelho-vivo); outline-offset: 3px; }
+
+/* Links viram uma fileira de botões */
+a {
+  flex: 1 1 140px;
+  padding: 13px 18px;
+  text-align: center;
+  text-decoration: none;
+  font-family: var(--titulo);
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--texto);
+  background: rgba(12, 7, 8, .82);
+  border: 1px solid var(--borda);
+  border-radius: 2px;
+  transition: border-color .2s, color .2s, box-shadow .2s;
+}
+
+a:hover { color: #fff; border-color: var(--vermelho-vivo); box-shadow: 0 0 20px rgba(229, 38, 47, .3); }
+a:focus-visible { outline: 2px solid var(--vermelho-vivo); outline-offset: 3px; }
+
+/* Página atual */
+a[href="delete.html"] { background: var(--vermelho); border-color: #e0343c; color: #fff; }
+
+@media (max-width: 600px) {
+  body { padding: 40px 16px 32px; }
+  h1 { font-size: 26px; }
+  input[type="button"] { flex: 1 1 100%; }
+  a { flex-basis: 45%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  input, a { transition: none; }
+}

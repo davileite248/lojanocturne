@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ofertas | Nocturne</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="paginas.css">
+</head>
+<body data-pagina="ofertas">
+
+  <header class="topo">
+    <a href="index.html" class="logo">NOCTURNE</a>
+    <nav class="menu">
+      <a href="index.html">Início</a>
+      <a href="login.html">Login</a>
+      <a href="get.html">Busca de Usuário</a>
+      <a href="put.html">Atualizar Perfil</a>
+      <a href="delete.html">Deletar Usuário</a>
+    </nav>
+    <form class="busca" id="formBusca">
+      <input type="search" id="campoBusca" placeholder="Buscar jogos, franquias, gêneros..." aria-label="Buscar jogos">
+      <button type="submit" aria-label="Buscar"><img src="img/lupa.png" alt="" width="30" height="30"></button>
+    </form>
+    <div class="acoes">
+      <a href="login.html" aria-label="Conta"><img src="img/perfil.png" alt="" width="34" height="34"></a>
+      <a href="carrinho.html" class="carrinho" aria-label="Carrinho"><img src="img/carrinho.png" alt="" width="34" height="34"><span id="qtdCarrinho">0</span></a>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="lateral">
+      <ul id="categorias">
+        <li><a href="catalogo.html">Todos os jogos</a></li>
+        <li><a href="catalogo.html?categoria=Ação">Ação</a></li>
+        <li><a href="catalogo.html?categoria=RPG">RPG</a></li>
+        <li><a href="catalogo.html?categoria=Aventura">Aventura</a></li>
+        <li><a href="catalogo.html?categoria=Terror">Terror</a></li>
+        <li><a href="catalogo.html?categoria=Estratégia">Estratégia</a></li>
+        <li><a href="catalogo.html?categoria=Simulação">Simulação</a></li>
+        <li><a href="catalogo.html?categoria=Esportes">Esportes</a></li>
+        <li><a href="catalogo.html?categoria=Indie">Indie</a></li>
+      </ul>
+    </aside>
+
+    <main class="conteudo">
+      <div class="titulo-pagina">
+        <h1 id="titulo">Ofertas da semana</h1>
+        <p id="contagem"></p>
+      </div>
+      <div class="grade-lancamentos" id="lista">
+        <p class="aviso">Carregando jogos...</p>
+      </div>
+    </main>
+  </div>
+
+
+</body>
+</html>

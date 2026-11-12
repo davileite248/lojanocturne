@@ -1,0 +1,176 @@
+/* Estilo do put.html (só elementos, sem classes) */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@400;500&display=swap");
+
+:root {
+  --fundo: #070707;
+  --borda: #2a1517;
+  --vermelho: #c1121f;
+  --vermelho-vivo: #e5262f;
+  --texto: #e8e2dc;
+  --suave: #9a918b;
+  --titulo: "Cinzel", Georgia, serif;
+  --corpo: "Inter", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { background: linear-gradient(180deg, #0c0506 0%, var(--fundo) 70%) fixed; }
+
+body {
+  min-height: 100vh;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 56px 24px 48px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 12px;
+  font-family: var(--corpo);
+  font-size: 14px;
+  color: var(--texto);
+}
+
+/* Lua de sangue, igual às outras páginas */
+body::before {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  top: -90px;
+  right: 6%;
+  width: 260px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 32%, #ff5b4d 0%, #b3121b 52%, #430408 100%);
+  box-shadow: 0 0 80px 24px rgba(200, 30, 30, .3), 0 0 200px 80px rgba(150, 10, 20, .18);
+  opacity: .8;
+}
+
+br { display: none; }
+
+h1 {
+  flex: 0 0 100%;
+  margin-bottom: 20px;
+  padding-bottom: 18px;
+  font-family: var(--titulo);
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  text-shadow: 0 0 24px rgba(229, 38, 47, .5);
+  border-bottom: 1px solid;
+  border-image: linear-gradient(90deg, var(--vermelho), transparent) 1;
+}
+
+/* Campos: cada rótulo e campo ocupam a linha toda */
+label {
+  flex: 0 0 100%;
+  margin-bottom: -6px;
+  font-family: var(--titulo);
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--suave);
+  transition: color .2s;
+}
+
+label:has(+ input:focus) { color: var(--vermelho-vivo); }
+
+input {
+  flex: 0 0 100%;
+  margin-bottom: 14px;
+  padding: 14px 16px;
+  font: inherit;
+  font-size: 15px;
+  color: var(--texto);
+  background: #0a0606;
+  border: 1px solid var(--borda);
+  border-radius: 2px;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+input::placeholder { color: #5d544f; }
+input:hover { border-color: #6b2a2e; }
+
+input:focus {
+  outline: none;
+  border-color: var(--vermelho-vivo);
+  box-shadow: 0 0 0 3px rgba(229, 38, 47, .2);
+}
+
+/* Campo do ID, que não pode ser editado */
+input:disabled {
+  color: var(--suave);
+  background: repeating-linear-gradient(135deg, #0a0606 0 8px, #0e0909 8px 16px);
+  border-style: dashed;
+  cursor: not-allowed;
+}
+
+input[type="number"] { -moz-appearance: textfield; appearance: textfield; }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+
+/* Botões: Buscar é secundário, Atualizar é a ação principal */
+button {
+  flex: 1 1 0;
+  margin-bottom: 30px;
+  padding: 15px 24px;
+  font-family: var(--titulo);
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-position .6s ease, background-color .2s, box-shadow .25s, transform .1s;
+}
+
+button:first-of-type {
+  background: transparent;
+  border: 1px solid var(--vermelho);
+}
+
+button:first-of-type:hover { background: rgba(193, 18, 31, .25); box-shadow: 0 0 20px rgba(229, 38, 47, .3); }
+
+button:last-of-type {
+  border: 1px solid #e0343c;
+  background: linear-gradient(110deg, var(--vermelho) 40%, #ff5057 50%, var(--vermelho) 60%) 100% 0 / 260% 100%;
+}
+
+button:last-of-type:hover { background-position: 0 0; box-shadow: 0 0 26px rgba(229, 38, 47, .5); }
+button:active { transform: translateY(1px); }
+button:focus-visible { outline: 2px solid var(--vermelho-vivo); outline-offset: 3px; }
+
+/* Links viram uma fileira de botões */
+a {
+  flex: 1 1 130px;
+  padding: 13px 14px;
+  text-align: center;
+  text-decoration: none;
+  font-family: var(--titulo);
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--texto);
+  background: rgba(12, 7, 8, .82);
+  border: 1px solid var(--borda);
+  border-radius: 2px;
+  transition: border-color .2s, color .2s, box-shadow .2s;
+}
+
+a:hover { color: #fff; border-color: var(--vermelho-vivo); box-shadow: 0 0 20px rgba(229, 38, 47, .3); }
+a:focus-visible { outline: 2px solid var(--vermelho-vivo); outline-offset: 3px; }
+
+/* Página atual */
+a[href="put.html"] { background: var(--vermelho); border-color: #e0343c; color: #fff; }
+
+@media (max-width: 600px) {
+  body { padding: 40px 16px 32px; }
+  h1 { font-size: 24px; }
+  button { flex-basis: 100%; margin-bottom: 8px; }
+  button:last-of-type { margin-bottom: 30px; }
+  a { flex-basis: 45%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  input, button, a, label { transition: none; }
+}

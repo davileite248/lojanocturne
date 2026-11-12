@@ -1,0 +1,63 @@
+/* Estilos das páginas internas: catálogo, ofertas, detalhes e carrinho (usa as variáveis do style.css) */
+
+.conteudo { padding: 30px 40px 48px; min-width: 0; }
+.pagina { max-width: 1100px; margin: 0 auto; padding: 36px 40px 56px; }
+
+.titulo-pagina { margin-bottom: 26px; padding-bottom: 16px; border-bottom: 1px solid; border-image: linear-gradient(90deg, var(--vermelho), transparent) 1; }
+.titulo-pagina h1 { font-family: var(--titulo); font-size: 30px; font-weight: 400; letter-spacing: .1em; text-transform: uppercase; text-shadow: 0 0 22px rgba(229, 38, 47, .45); }
+.titulo-pagina p { margin-top: 4px; color: var(--texto-suave); font-size: 13px; }
+
+.voltar { display: inline-block; margin-bottom: 22px; font-family: var(--titulo); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--texto-suave); }
+.voltar:hover, .link { color: var(--vermelho-vivo); }
+.link { text-decoration: underline; text-underline-offset: 3px; }
+
+/* botões <button> no estilo dos links .botao */
+button.botao { border: 0; color: #fff; cursor: pointer; }
+button.botao:disabled { background: #3a1a1d; color: var(--texto-suave); cursor: default; }
+button.botao-contorno { background: none; color: var(--texto); cursor: pointer; }
+button.botao-contorno:hover { border-color: var(--vermelho-vivo); }
+
+/* Detalhes */
+.detalhes { display: grid; grid-template-columns: 1.15fr 1fr; gap: 44px; align-items: start; }
+.detalhes-capa { position: relative; aspect-ratio: 16 / 10; border: 1px solid var(--borda); border-radius: 3px; overflow: hidden; background: linear-gradient(135deg, #1b1b1b, #3a0f13); box-shadow: 0 24px 60px rgba(0, 0, 0, .6); }
+.detalhes-capa img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.detalhes-capa .selo { top: 12px; left: 12px; font-size: 13px; padding: 4px 10px; }
+.detalhes-info h1 { font-family: var(--titulo); font-size: 36px; font-weight: 400; line-height: 1.15; margin: 8px 0 10px; }
+.detalhes-desc { margin: 18px 0 24px; color: var(--texto-suave); font-size: 15px; line-height: 1.65; max-width: 460px; }
+.detalhes-preco { display: flex; align-items: baseline; gap: 12px; margin-bottom: 22px; }
+.detalhes-preco strong { font-family: var(--titulo); font-size: 30px; font-weight: 400; color: var(--vermelho-vivo); }
+.detalhes-preco s { color: var(--texto-suave); }
+.detalhes-botoes { display: flex; gap: 12px; align-items: stretch; }
+.detalhes-botoes .coracao { font-size: 20px; padding: 0 16px; }
+
+/* Carrinho */
+.carrinho-grade { display: grid; grid-template-columns: 1fr 300px; gap: 28px; align-items: start; }
+.carrinho-lista { display: grid; gap: 12px; }
+.item { display: grid; grid-template-columns: 120px 1fr auto auto; gap: 18px; align-items: center; padding: 12px 16px 12px 12px; border: 1px solid var(--borda); border-radius: 3px; background: linear-gradient(135deg, #140809, var(--painel)); }
+.item img { width: 120px; aspect-ratio: 16 / 10; object-fit: cover; display: block; border-radius: 2px; background: #1b1b1b; }
+.item h5 { font-family: var(--titulo); font-size: 14px; font-weight: 400; margin-bottom: 4px; }
+.item .preco { font-size: 15px; }
+.remover { background: none; border: 1px solid var(--borda); color: var(--texto-suave); width: 32px; height: 32px; font-size: 20px; line-height: 1; border-radius: 2px; cursor: pointer; }
+.remover:hover { color: #fff; border-color: var(--vermelho-vivo); background: #3a0c10; }
+.resumo h4 { margin-bottom: 14px; }
+.resumo .linha { display: flex; justify-content: space-between; align-items: baseline; max-width: none; margin: 0 0 20px; color: var(--texto); }
+.resumo .linha strong { font-family: var(--titulo); font-size: 22px; font-weight: 400; color: var(--vermelho-vivo); }
+.resumo .botao { width: 100%; padding: 15px; }
+
+/* Aviso e mensagem temporária */
+.aviso { padding: 24px 0; }
+.toast { position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%); z-index: 20; padding: 12px 22px; background: var(--painel); border: 1px solid var(--vermelho); border-radius: 2px; box-shadow: 0 0 24px rgba(229, 38, 47, .35); font-size: 13px; }
+
+@media (max-width: 1000px) {
+  .conteudo { padding: 24px 20px 40px; }
+  .pagina { padding: 28px 20px 44px; }
+}
+@media (max-width: 800px) {
+  .detalhes, .carrinho-grade { grid-template-columns: 1fr; }
+  .detalhes-info h1 { font-size: 28px; }
+}
+@media (max-width: 520px) {
+  .item { grid-template-columns: 84px 1fr auto; }
+  .item img { width: 84px; }
+  .item .preco { grid-column: 2; }
+}

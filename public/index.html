@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trupe N0cturne</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <a href="index.html" class="logo">NOCTURNE</a>
+    <nav class="menu">
+      <a href="index.html" class="ativo">Início</a>
+      <a href="login.html">Login</a>
+      <a href="get.html">Busca de Usuários</a>
+      <a href="put.html">Atualizar Perfil</a>
+      <a href="delete.html">Deletar Usuário</a>
+    </nav>
+    <form class="busca" id="formBusca">
+      <input type="search" id="campoBusca" placeholder="Buscar jogos, franquias, gêneros..." aria-label="Buscar jogos">
+      <button type="submit" aria-label="Buscar"><img src="img/lupa.png" width="30px" height="30px" alt=""></button>
+    </form>
+    <div class="acoes">
+      <a href="login.html" aria-label="Conta"><img src="img/perfilnocturne.png" width="30px" height="30px" alt=""></a>
+      <a href="carrinho.html" class="carrinho" aria-label="Carrinho"><img src="img/lupanocturne.png" width="30px" height="30px" alt=""><span id="qtdCarrinho">2</span></a>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="lateral">
+      <ul id="categorias">
+        <li><a href="" class="ativo">Todos os jogos</a></li>
+        <li><a href="">Ação</a></li>
+        <li><a href="">RPG</a></li>
+        <li><a href="">Aventura</a></li>
+        <li><a href="">Terror</a></li>
+        <li><a href="">Estratégia</a></li>
+        <li><a href="">Simulação</a></li>
+        <li><a href="">Esportes</a></li>
+        <li><a href="">Indie</a></li>
+      </ul>
+    </aside>
+
+    <main>
+
+      <section class="destaque">
+        <img class="destaque-img" src="https://xboxwire.thesourcemediaassets.com/sites/2/2024/02/Elden-Ring-Hero-d2b3b43835cb49e5eb96.jpg" alt="Arte de Elden Ring: Shadow of the Erdtree">
+
+        <div class="destaque-texto">
+          <p class="rotulo">Destaque</p>
+          <h1>Elden Ring</h1>
+          <h2>Shadow of the Erdtree</h2>
+          <p class="frase">Um novo capítulo se inicia.</p>
+          <p class="descricao">Explore novas terras, enfrente inimigos aterrorizantes e descubra os segredos por trás da Árvore do Mundo.</p>
+          <div class="compra">
+            <a href="detalhes.html" class="botao">Comprar agora</a>
+            <span class="preco-destaque">R$ 249,90</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="vantagens">
+        <div><strong>Compra segura</strong><span>Seus dados protegidos</span></div>
+        <div><strong>Entrega digital</strong><span>Receba na hora</span></div>
+        <div><strong>Suporte especializado</strong><span>Estamos aqui para ajudar</span></div>
+        <div><strong>Jogos originais</strong><span>Direto das plataformas oficiais</span></div>
+      </section>
+
+      <section class="secao">
+        <div class="secao-topo">
+          <h3>Lançamentos</h3>
+          <a href="">Ver todos &rarr;</a>
+        </div>
+        <div class="grade-lancamentos" id="lancamentos">
+          <article class="cartao">
+            <a href="detalhes.html?id=2" class="cartao-capa">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5ZHk0Z_fxS-Gk-0FOPjXtpaQDbhpvj0JF3HJwXuoY-SkNRMG16BiOk2c&s=10" alt="Capa de Silent Hill 2 Remake">
+            </a>
+            <div class="cartao-linha">
+              <h5>Silent Hill 2 Remake</h5>
+              <button class="coracao" aria-label="Adicionar à lista de desejos">&#9825;</button>
+            </div>
+            <div class="cartao-linha">
+              <span class="plataformas">PC · PS</span>
+              <span class="preco-bloco"><span class="preco">R$ 279,90</span></span>
+            </div>
+          </article>
+
+          <article class="cartao">
+            <a href="detalhes.html?id=3" class="cartao-capa">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2SJ7MtJxi9W5p1kvp63OLm70LGxHosLhy50Z7Pp-XRkuskbXiXmztWXU&s=10" alt="Capa de Black Myth: Wukong">
+            </a>
+            <div class="cartao-linha">
+              <h5>Black Myth: Wukong</h5>
+              <button class="coracao" aria-label="Adicionar à lista de desejos">&#9825;</button>
+            </div>
+            <div class="cartao-linha">
+              <span class="plataformas">PC · PS</span>
+              <span class="preco-bloco"><span class="preco">R$ 249,90</span></span>
+            </div>
+          </article>
+
+          <article class="cartao">
+            <a href="detalhes.html?id=4" class="cartao-capa">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfmEnXqZqHM4BGsjGg6nI0l5egvzSAqzw96CThwFRO32A2WKUPspuPkcY3&s=10" alt="Capa de Dragon Age: The Veilguard">
+            </a>
+            <div class="cartao-linha">
+              <h5>Dragon Age: The Veilguard</h5>
+              <button class="coracao" aria-label="Adicionar à lista de desejos">&#9825;</button>
+            </div>
+            <div class="cartao-linha">
+              <span class="plataformas">PC · PS</span>
+              <span class="preco-bloco"><span class="preco">R$ 299,90</span></span>
+            </div>
+          </article>
+
+          <article class="cartao">
+            <a href="detalhes.html?id=5" class="cartao-capa">
+              <img src="https://store-images.s-microsoft.com/image/apps.37259.13722499700478908.eac1e9c1-255b-4f29-94dc-03b6ed8ad558.47539e4e-05ba-4527-9be0-d10715def8ba" alt="Capa de Final Fantasy VII Rebirth">
+            </a>
+            <div class="cartao-linha">
+              <h5>Final Fantasy VII Rebirth</h5>
+              <button class="coracao" aria-label="Adicionar à lista de desejos">&#9825;</button>
+            </div>
+            <div class="cartao-linha">
+              <span class="plataformas">PC · PS</span>
+              <span class="preco-bloco"><span class="preco">R$ 279,90</span></span>
+            </div>
+          </article>
+
+          <article class="cartao">
+            <a href="detalhes.html?id=6" class="cartao-capa">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD1Y5Q56zqcbB3P_EPzt7lrCPyG-wXq0nMhsr6dEFA6fmxfZ8GhrYJyYQ&s=10https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD1Y5Q56zqcbB3P_EPzt7lrCPyG-wXq0nMhsr6dEFA6fmxfZ8GhrYJyYQ&s=10" alt="Capa de Alan Wake 2">
+              <span class="selo">-29%</span>
+            </a>
+            <div class="cartao-linha">
+              <h5>Alan Wake 2</h5>
+              <button class="coracao" aria-label="Adicionar à lista de desejos">&#9825;</button>
+            </div>
+            <div class="cartao-linha">
+              <span class="plataformas">PC · PS</span>
+              <span class="preco-bloco"><s>R$ 279,90</s> <span class="preco">R$ 199,90</span></span>
+            </div>
+          </article>
+
+          <article class="cartao">
+            <a href="detalhes.html?id=7" class="cartao-capa">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1YgxR4ZZTWnnuZEJu13P2NPWC8odoRJdjsMA3ZPlL5EMVgQYy8CJWUy8&s=10" alt="Capa de Hogwarts Legacy">
+            </a>
+            <div class="cartao-linha">
+              <h5>Hogwarts Legacy</h5>
+              <button class="coracao" aria-label="Adicionar à lista de desejos">&#9825;</button>
+            </div>
+            <div class="cartao-linha">
+              <span class="plataformas">PC · PS</span>
+              <span class="preco-bloco"><span class="preco">R$ 179,90</span></span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== EM OFERTA ===== -->
+      <section class="secao">
+        <div class="secao-topo">
+          <h3>Em oferta</h3>
+          <a href="ofertas.html">Ver todas &rarr;</a>
+        </div>
+        <div class="grade-lancamentos" id="ofertas">
+          <article class="cartao">
+            <a href="detalhes.html?id=6" class="cartao-capa">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD1Y5Q56zqcbB3P_EPzt7lrCPyG-wXq0nMhsr6dEFA6fmxfZ8GhrYJyYQ&s=10https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD1Y5Q56zqcbB3P_EPzt7lrCPyG-wXq0nMhsr6dEFA6fmxfZ8GhrYJyYQ&s=10" alt="Capa de Alan Wake 2">
+              <span class="selo">-29%</span>
+            </a>
+            <div class="cartao-linha">
+              <h5>Alan Wake 2</h5>
+              <button class="coracao" aria-label="Adicionar à lista de desejos">&#9825;</button>
+            </div>
+            <div class="cartao-linha">
+              <span class="plataformas">PC · PS</span>
+              <span class="preco-bloco"><s>R$ 279,90</s> <span class="preco">R$ 199,90</span></span>
+            </div>
+          </article>
+
+          <article class="cartao">
+            <a href="detalhes.html?id=8" class="cartao-capa">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ60WFY9rS9i7oLnB23HHBOPnmu8dYiwzNd6GKGfFbG2LK34KasRl6k0gJ&s=10" alt="Capa de Resident Evil 4">
+              <span class="selo">-20%</span>
+            </a>
+            <div class="cartao-linha">
+              <h5>Resident Evil 4</h5>
+              <button class="coracao" aria-label="Adicionar à lista de desejos">&#9825;</button>
+            </div>
+            <div class="cartao-linha">
+              <span class="plataformas">PC · PS</span>
+              <span class="preco-bloco"><s>R$ 249,90</s> <span class="preco">R$ 199,90</span></span>
+            </div>
+          </article>
+
+          <article class="cartao">
+            <a href="detalhes.html?id=9" class="cartao-capa">
+              <img src="https://public.cdn.cdpr.app/common/news/974db3ceaf0e6035a922cbbd7c7770b0_q90_1920x1080.jpeg" alt="Capa de The Witcher 3: Wild Hunt">
+              <span class="selo">-33%</span>
+            </a>
+            <div class="cartao-linha">
+              <h5>The Witcher 3: Wild Hunt</h5>
+              <button class="coracao" aria-label="Adicionar à lista de desejos">&#9825;</button>
+            </div>
+            <div class="cartao-linha">
+              <span class="plataformas">PC · PS</span>
+              <span class="preco-bloco"><s>R$ 149,90</s> <span class="preco">R$ 99,90</span></span>
+            </div>
+          </article>
+
+          <article class="cartao">
+            <a href="detalhes.html?id=10" class="cartao-capa">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZidZIVTK6zXbrrddsdBlbAmuzlf8O-K2-taOR1EI-QbQH5m353nw3sr0&s=10" alt="Capa de God of War Ragnarök">
+              <span class="selo">-17%</span>
+            </a>
+            <div class="cartao-linha">
+              <h5>God of War Ragnarök</h5>
+              <button class="coracao" aria-label="Adicionar à lista de desejos">&#9825;</button>
+            </div>
+            <div class="cartao-linha">
+              <span class="plataformas">PC · PS</span>
+              <span class="preco-bloco"><s>R$ 299,90</s> <span class="preco">R$ 249,90</span></span>
+            </div>
+          </article>
+
+          <article class="cartao">
+            <a href="detalhes.html?id=11" class="cartao-capa">
+              <img src="https://cdn1.epicgames.com/b30b6d1b4dfd4dcc93b5490be5e094e5/offer/RDR2476298253_Epic_Games_Wishlist_RDR2_2560x1440_V01-2560x1440-2a9ebe1f7ee202102555be202d5632ec.jpg" alt="Capa de Red Dead Redemption 2">
+              <span class="selo">-40%</span>
+            </a>
+            <div class="cartao-linha">
+              <h5>Red Dead Redemption 2</h5>
+              <button class="coracao" aria-label="Adicionar à lista de desejos">&#9825;</button>
+            </div>
+            <div class="cartao-linha">
+              <span class="plataformas">PC · PS</span>
+              <span class="preco-bloco"><s>R$ 249,90</s> <span class="preco">R$ 149,90</span></span>
+            </div>
+          </article>
+
+          <article class="cartao">
+            <a href="detalhes.html?id=12" class="cartao-capa">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDfX5bVE5UZS0FPuu7j4SuztpM0zaYZi1Vs7cEJRRAMiAfpukpgP6d_3Q&s=10" alt="Capa de Cyberpunk 2077">
+              <span class="selo">-35%</span>
+            </a>
+            <div class="cartao-linha">
+              <h5>Cyberpunk 2077</h5>
+              <button class="coracao" aria-label="Adicionar à lista de desejos">&#9825;</button>
+            </div>
+            <div class="cartao-linha">
+              <span class="plataformas">PC · PS</span>
+              <span class="preco-bloco"><s>R$ 199,90</s> <span class="preco">R$ 129,90</span></span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== OFERTAS DA SEMANA / MAIS VENDIDOS / CHAMADA ===== -->
+      <section class="trio">
+        <a href="ofertas.html" class="painel painel-ofertas">
+        <img class="ofertas-img" src="img/ofertas.svg" alt="">
+        <div class="ofertas-texto"></div>
+          <h3>Ofertas da semana</h3>
+          <p>Grandes jogos, preços ainda maiores.</p>
+          <span class="botao-contorno">Ver ofertas</span>
+        </a>
+        <div class="painel painel-vendidos">
+          <h4>Mais vendidos</h4>
+          <div class="capas" id="maisVendidos">
+            <a href="detalhes.html?id=8" class="capa-mini" title="Resident Evil 4">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ60WFY9rS9i7oLnB23HHBOPnmu8dYiwzNd6GKGfFbG2LK34KasRl6k0gJ&s=10" alt="Capa de Resident Evil 4">
+              <span class="rank">1</span>
+            </a>
+            <a href="detalhes.html?id=9" class="capa-mini" title="The Witcher 3: Wild Hunt">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC9GOtUV78iTqqn1OuGK3KNc1z8hUxkFNr9BC6nwnjM57EuLj9adXYou0R&s=10" alt="Capa de The Witcher 3: Wild Hunt">
+              <span class="rank">2</span>
+            </a>
+            <a href="detalhes.html?id=10" class="capa-mini" title="God of War Ragnarök">
+              <img src="https://upload.wikimedia.org/wikipedia/pt/a/a5/God_of_War_Ragnar%C3%B6k_capa.jpg?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original" alt="Capa de God of War Ragnarök">
+              <span class="rank">3</span>
+            </a>
+            <a href="detalhes.html?id=11" class="capa-mini" title="Red Dead Redemption 2">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZEMtBJYOKeuFxpFxD846h9sm-Imbb8ByWulSO3eLwXUZFB_K088aNjHjk&s=10" alt="Capa de Red Dead Redemption 2">
+              <span class="rank">4</span>
+            </a>
+            <a href="detalhes.html?id=12" class="capa-mini" title="Cyberpunk 2077">
+              <img src="https://upload.wikimedia.org/wikipedia/pt/f/f7/Cyberpunk_2077_capa.png?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original" alt="Capa de Cyberpunk 2077">
+              <span class="rank">5</span>
+            </a>
+          </div>
+        </div>
+        <div class="painel painel-chamada">
+          <h3>Seu próximo jogo te espera</h3>
+          <p>Mais que uma loja, um refúgio para quem ama mundos além do real.</p>
+        </div>
+      </section>
+
+      <!-- ===== SEÇÕES POR GÊNERO ===== -->
+      <div id="secoesCategoria">
+      <!-- ===== RPG ===== -->
+      <section class="secao">
+        <div class="secao-topo">
+          <h3>RPG</h3>
+          <a href="catalogo.html?categoria=RPG">Ver todos &rarr;</a>
+        </div>
+        <div class="grade-lancamentos">
+          <article class="cartao">
+            <a href="detalhes.html?id=1" class="cartao-capa">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4_AT47ZxG5b2KEmK-0KlysuHXol5x-TiWyW_QEJ0eliqh77IWKZWd6QB4&s=10" alt="Capa de Elden Ring: Shadow of the Erdtree">
+            </a>
+            <div class="cartao-linha">
+              <h5>Elden Ring: Shadow of the Erdtree</h5>
+              <button class="coracao" aria-label="Adicionar à lista de desejos">&#9825;</button>
+            </div>
+            <div class="cartao-linha">
+              <span class="plataformas">PC · PS</span>
+              <span class="preco-bloco"><span class="preco">R$ 249,90</span></span>
+            </div>
+          </article>
+
+          <article class="cartao">
+            <a href="detalhes.html?id=4" class="cartao-capa">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfmEnXqZqHM4BGsjGg6nI0l5egvzSAqzw96CThwFRO32A2WKUPspuPkcY3&s=10" alt="Capa de Dragon Age: The Veilguard">
+            </a>
+            <div class="cartao-linha">
+              <h5>Dragon Age: The Veilguard</h5>
+              <button class="coracao" aria-label="Adicionar à lista de desejos">&#9825;</button>
+            </div>
+            <div class="cartao-linha">
+              <span class="plataformas">PC · PS</span>
+              <span class="preco-bloco"><span class="preco">R$ 299,90</span></span>
+            </div>
+          </article>
+
+          <article class="cartao">
+            <a href="detalhes.html?id=5" class="cartao-capa">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIKfZ_YiggggfOZhpN3kDQQHSu-qpA0KwUouWrcMiPrDtuQ5_BT0iHFYA&s=10" alt="Capa de Final Fantasy VII Rebirth">
+            </a>
+            <div class="cartao-linha">
+              <h5>Final Fantasy VII Rebirth</h5>
+              <button class="coracao" aria-label="Adicionar à lista de desejos">&#9825;</button>
+            </div>
+            <div class="cartao-linha">
+              <span class="plataformas">PC · PS</span>
+              <span class="preco-bloco"><span class="preco">R$ 279,90</span></span>
+            </div>
+          </article>
+
+          <article class="cartao">
+            <a href="detalhes.html?id=9" class="cartao-capa">
+              <img src="https://public.cdn.cdpr.app/common/news/2cd046238b44541c8c3a62adc55a3e8c_q90_1920x1080.png" alt="Capa de The Witcher 3: Wild Hunt">
+              <span class="selo">-33%</span>
+            </a>
+            <div class="cartao-linha">
+              <h5>The Witcher 3: Wild Hunt</h5>
+              <button class="coracao" aria-label="Adicionar à lista de desejos">&#9825;</button>
+            </div>
+            <div class="cartao-linha">
+              <span class="plataformas">PC · PS</span>
+              <span class="preco-bloco"><s>R$ 149,90</s> <span class="preco">R$ 99,90</span></span>
+            </div>
+          </article>
+
+          <article class="cartao">
+            <a href="detalhes.html?id=12" class="cartao-capa">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTayEzuyKix8StWh2FO3p5lPGdklarNkbuJJ8YweT_jjQ&s=10" alt="Capa de Cyberpunk 2077">
+              <span class="selo">-35%</span>
+            </a>
+            <div class="cartao-linha">
+              <h5>Cyberpunk 2077</h5>
+              <button class="coracao" aria-label="Adicionar à lista de desejos">&#9825;</button>
+            </div>
+            <div class="cartao-linha">
+              <span class="plataformas">PC · PS</span>
+              <span class="preco-bloco"><s>R$ 199,90</s> <span class="preco">R$ 129,90</span></span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== TERROR ===== -->
+      <section class="secao">
+        <div class="secao-topo">
+          <h3>Terror</h3>
+          <a href="catalogo.html?categoria=Terror">Ver todos &rarr;</a>
+        </div>
+        <div class="grade-lancamentos">
+          <article class="cartao">
+            <a href="detalhes.html?id=2" class="cartao-capa">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5ZHk0Z_fxS-Gk-0FOPjXtpaQDbhpvj0JF3HJwXuoY-SkNRMG16BiOk2c&s=10" alt="Capa de Silent Hill 2 Remake">
+            </a>
+            <div class="cartao-linha">
+              <h5>Silent Hill 2 Remake</h5>
+              <button class="coracao" aria-label="Adicionar à lista de desejos">&#9825;</button>
+            </div>
+            <div class="cartao-linha">
+              <span class="plataformas">PC · PS</span>
+              <span class="preco-bloco"><span class="preco">R$ 279,90</span></span>
+            </div>
+          </article>
+
+          <article class="cartao">
+            <a href="detalhes.html?id=6" class="cartao-capa">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvXeYhwvmlSUJ4yzes5liWYIciAhiGzL2SAwINyD8jKGBu0NbiAX1tkeI&s=10" alt="Capa de Alan Wake 2">
+              <span class="selo">-29%</span>
+            </a>
+            <div class="cartao-linha">
+              <h5>Alan Wake 2</h5>
+              <button class="coracao" aria-label="Adicionar à lista de desejos">&#9825;</button>
+            </div>
+            <div class="cartao-linha">
+              <span class="plataformas">PC · PS</span>
+              <span class="preco-bloco"><s>R$ 279,90</s> <span class="preco">R$ 199,90</span></span>
+            </div>
+          </article>
+
+          <article class="cartao">
+            <a href="detalhes.html?id=8" class="cartao-capa">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUgl01K_C7GK6uaDTjfUc0h7iqM9AwSEx0Bne7fM9Gm2KufmEXesCSBe0X&s=10" alt="Capa de Resident Evil 4">
+              <span class="selo">-20%</span>
+            </a>
+            <div class="cartao-linha">
+              <h5>Resident Evil 4</h5>
+              <button class="coracao" aria-label="Adicionar à lista de desejos">&#9825;</button>
+            </div>
+            <div class="cartao-linha">
+              <span class="plataformas">PC · PS</span>
+              <span class="preco-bloco"><s>R$ 249,90</s> <span class="preco">R$ 199,90</span></span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== AÇÃO ===== -->
+      <section class="secao">
+        <div class="secao-topo">
+          <h3>Ação</h3>
+          <a href="catalogo.html?categoria=Ação">Ver todos &rarr;</a>
+        </div>
+        <div class="grade-lancamentos">
+          <article class="cartao">
+            <a href="detalhes.html?id=3" class="cartao-capa">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy0sz-sP_3utkotyXGNKCu5iMj6zDW22b4LThP75iFHhHGKWx5iJFgfwti&s=10" alt="Capa de Black Myth: Wukong">
+            </a>
+            <div class="cartao-linha">
+              <h5>Black Myth: Wukong</h5>
+              <button class="coracao" aria-label="Adicionar à lista de desejos">&#9825;</button>
+            </div>
+            <div class="cartao-linha">
+              <span class="plataformas">PC · PS</span>
+              <span class="preco-bloco"><span class="preco">R$ 249,90</span></span>
+            </div>
+          </article>
+
+          <article class="cartao">
+            <a href="detalhes.html?id=10" class="cartao-capa">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZidZIVTK6zXbrrddsdBlbAmuzlf8O-K2-taOR1EI-QbQH5m353nw3sr0&s=10" alt="Capa de God of War Ragnarök">
+              <span class="selo">-17%</span>
+            </a>
+            <div class="cartao-linha">
+              <h5>God of War Ragnarök</h5>
+              <button class="coracao" aria-label="Adicionar à lista de desejos">&#9825;</button>
+            </div>
+            <div class="cartao-linha">
+              <span class="plataformas">PC · PS</span>
+              <span class="preco-bloco"><s>R$ 299,90</s> <span class="preco">R$ 249,90</span></span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== AVENTURA ===== -->
+      <section class="secao">
+        <div class="secao-topo">
+          <h3>Aventura</h3>
+          <a href="catalogo.html?categoria=Aventura">Ver todos &rarr;</a>
+        </div>
+        <div class="grade-lancamentos">
+          <article class="cartao">
+            <a href="detalhes.html?id=7" class="cartao-capa">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1YgxR4ZZTWnnuZEJu13P2NPWC8odoRJdjsMA3ZPlL5EMVgQYy8CJWUy8&s=10" alt="Capa de Hogwarts Legacy">
+            </a>
+            <div class="cartao-linha">
+              <h5>Hogwarts Legacy</h5>
+              <button class="coracao" aria-label="Adicionar à lista de desejos">&#9825;</button>
+            </div>
+            <div class="cartao-linha">
+              <span class="plataformas">PC · PS</span>
+              <span class="preco-bloco"><span class="preco">R$ 179,90</span></span>
+            </div>
+          </article>
+
+          <article class="cartao">
+            <a href="detalhes.html?id=11" class="cartao-capa">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaq_EMvFbX5PAF3rENBLc_xDpD8QyA8G2Xom-PbC7Wspa0m4rVjPUfVj4&s=10" alt="Capa de Red Dead Redemption 2">
+              <span class="selo">-40%</span>
+            </a>
+            <div class="cartao-linha">
+              <h5>Red Dead Redemption 2</h5>
+              <button class="coracao" aria-label="Adicionar à lista de desejos">&#9825;</button>
+            </div>
+            <div class="cartao-linha">
+              <span class="plataformas">PC · PS</span>
+              <span class="preco-bloco"><s>R$ 249,90</s> <span class="preco">R$ 149,90</span></span>
+            </div>
+          </article>
+        </div>
+      </section>
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>

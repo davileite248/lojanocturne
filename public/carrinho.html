@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carrinho | Nocturne</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="paginas.css">
+</head>
+<body data-pagina="carrinho">
+
+  <header class="topo">
+    <a href="index.html" class="logo">NOCTURNE</a>
+    <nav class="menu">
+      <a href="index.html">Início</a>
+      <a href="login.html">Login</a>
+      <a href="get.html">Busca de Usuários</a>
+      <a href="put.html">Atualizar perfil</a>
+      <a href="delete.html">Deletar Usuário</a>
+    </nav>
+    <form class="busca" id="formBusca">
+      <input type="search" id="campoBusca" placeholder="Buscar jogos, franquias, gêneros..." aria-label="Buscar jogos">
+      <button type="submit" aria-label="Buscar"><img src="img/lupa.png" alt="" width="30" height="30"></button>
+    </form>
+    <div class="acoes">
+      <a href="login.html" aria-label="Conta"><img src="img/perfilnocturne.png" alt="" width="34" height="34"></a>
+      <a href="carrinho.html" class="carrinho" aria-label="Carrinho"><img src="img/carrinhonocturne.jpg" alt="" width="34" height="34"><span id="qtdCarrinho">0</span></a>
+    </div>
+  </header>
+
+  <main class="pagina">
+    <div class="titulo-pagina">
+      <h1>Carrinho</h1>
+    </div>
+    <!-- Preenchido pelo loja.js com os jogos guardados no navegador -->
+    <div id="carrinho"><p class="aviso">Carregando carrinho...</p></div>
+  </main>
+  <script src="loja.js"></script>
+</body>
+</html>

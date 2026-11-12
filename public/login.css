@@ -1,0 +1,243 @@
+/* Estilo do login.html (só elementos, sem classes) */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@1,500&family=Inter:wght@400;500&display=swap");
+
+:root {
+  --fundo: #070707;
+  --borda: #2a1517;
+  --vermelho: #c1121f;
+  --vermelho-vivo: #e5262f;
+  --texto: #e8e2dc;
+  --suave: #9a918b;
+  --titulo: "Cinzel", Georgia, serif;
+  --corpo: "Inter", system-ui, sans-serif;
+  --serifa: "Cormorant Garamond", Georgia, serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  overflow: hidden;
+  font-family: var(--corpo);
+  font-size: 14px;
+  color: var(--texto);
+  background: linear-gradient(180deg, #0c0506 0%, var(--fundo) 70%);
+}
+
+/* A lua de sangue: o elemento marcante da página */
+body::before {
+  content: "";
+  position: fixed;
+  top: 7%;
+  right: 12%;
+  width: min(38vmin, 340px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 32%, #ff5b4d 0%, #b3121b 52%, #430408 100%);
+  box-shadow: 0 0 90px 30px rgba(200, 30, 30, .35), 0 0 220px 90px rgba(150, 10, 20, .22);
+  animation: pulsar 9s ease-in-out infinite alternate;
+}
+
+/* Vinheta escurecendo as bordas */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 35%, rgba(0, 0, 0, .88) 100%);
+}
+
+@keyframes pulsar {
+  from { opacity: .75; transform: scale(.98); }
+  to   { opacity: 1;   transform: scale(1.03); }
+}
+
+/* Card com cantos em colchete */
+form {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 400px;
+  padding: 44px 38px 36px;
+  border: 1px solid var(--borda);
+  border-radius: 2px;
+  background:
+    linear-gradient(var(--vermelho-vivo), var(--vermelho-vivo)) top left / 22px 1px no-repeat,
+    linear-gradient(var(--vermelho-vivo), var(--vermelho-vivo)) top left / 1px 22px no-repeat,
+    linear-gradient(var(--vermelho-vivo), var(--vermelho-vivo)) top right / 22px 1px no-repeat,
+    linear-gradient(var(--vermelho-vivo), var(--vermelho-vivo)) top right / 1px 22px no-repeat,
+    linear-gradient(var(--vermelho-vivo), var(--vermelho-vivo)) bottom left / 22px 1px no-repeat,
+    linear-gradient(var(--vermelho-vivo), var(--vermelho-vivo)) bottom left / 1px 22px no-repeat,
+    linear-gradient(var(--vermelho-vivo), var(--vermelho-vivo)) bottom right / 22px 1px no-repeat,
+    linear-gradient(var(--vermelho-vivo), var(--vermelho-vivo)) bottom right / 1px 22px no-repeat,
+    rgba(12, 7, 8, .82);
+  background-origin: border-box;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .75);
+  animation: entrar .7s ease-out both;
+}
+
+@keyframes entrar {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Marca no topo, feita só com CSS */
+form::before {
+  content: "NOCTURNE";
+  display: block;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  font-family: var(--titulo);
+  font-size: 26px;
+  letter-spacing: .2em;
+  text-align: center;
+  text-shadow: 0 0 22px rgba(229, 38, 47, .55);
+  border-bottom: 1px solid;
+  border-image: linear-gradient(90deg, transparent, var(--vermelho), transparent) 1;
+}
+
+/* Frase no rodapé do card */
+form::after {
+  content: "Mais que uma loja, um refúgio para quem ama mundos além do real.";
+  display: block;
+  margin-top: 26px;
+  font-family: var(--serifa);
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.35;
+  text-align: center;
+  color: var(--suave);
+}
+
+br { display: none; }
+
+label {
+  display: block;
+  margin-bottom: 4px;
+  font-family: var(--titulo);
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--suave);
+  transition: color .2s;
+}
+
+/* Quando o campo seguinte está em foco, o rótulo acende */
+label:has(+ input:focus) { color: var(--vermelho-vivo); }
+
+/* Campos só com linha embaixo */
+input {
+  width: 100%;
+  margin-bottom: 22px;
+  padding: 11px 4px;
+  font: inherit;
+  font-size: 15px;
+  color: var(--texto);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #3d2427;
+  border-radius: 0;
+  transition: border-color .2s, background .2s, box-shadow .2s;
+}
+
+input:hover { border-bottom-color: #6b2a2e; }
+
+input:focus {
+  outline: none;
+  border-bottom-color: var(--vermelho-vivo);
+  background: linear-gradient(180deg, transparent, rgba(229, 38, 47, .09));
+  box-shadow: 0 1px 0 var(--vermelho-vivo);
+}
+
+input[type="number"] { -moz-appearance: textfield; appearance: textfield; }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+
+/* Preenchimento automático do navegador sem fundo branco */
+input:-webkit-autofill {
+  -webkit-text-fill-color: var(--texto);
+  box-shadow: 0 0 0 100px #140a0b inset;
+}
+
+button {
+  width: 100%;
+  margin-top: 8px;
+  padding: 15px 24px;
+  font-family: var(--titulo);
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid #e0343c;
+  border-radius: 2px;
+  cursor: pointer;
+  /* faixa de brilho que desliza no hover */
+  background: linear-gradient(110deg, var(--vermelho) 40%, #ff5057 50%, var(--vermelho) 60%) 100% 0 / 260% 100%;
+  transition: background-position .6s ease, box-shadow .25s, transform .1s;
+}
+
+button:hover { background-position: 0 0; box-shadow: 0 0 26px rgba(229, 38, 47, .45); }
+button:active { transform: translateY(1px); }
+button:focus-visible { outline: 2px solid var(--vermelho-vivo); outline-offset: 3px; }
+
+@media (max-width: 600px) {
+  body::before { top: 3%; right: 50%; transform: translateX(50%); width: 52vmin; animation: none; }
+  form { padding: 34px 22px 28px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before, form { animation: none; }
+  button { transition: none; }
+}
+
+/* ===== Links Cadastrados · Atualizar · Apagar · Home em linha, abaixo do card ===== */
+body {
+  display: grid;
+  grid-template-columns: repeat(4, auto);   /* 4 links lado a lado */
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  column-gap: 10px;
+  overflow-x: hidden;                       /* mantém sem rolagem lateral...        */
+  overflow-y: auto;                         /* ...mas libera a rolagem vertical      */
+}
+
+form {
+  grid-column: 1 / -1;                      /* o card ocupa a linha toda */
+  justify-self: center;
+  width: min(400px, calc(100vw - 48px));
+  max-width: none;
+  margin-bottom: 14px;
+}
+
+a {
+  position: relative;
+  z-index: 1;                               /* fica acima da vinheta escura */
+  display: block;
+  padding: 12px 10px;
+  text-align: center;
+  text-decoration: none;
+  font-family: var(--titulo);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--texto);
+  background: rgba(12, 7, 8, .82);
+  border: 1px solid var(--borda);
+  border-radius: 2px;
+  transition: border-color .2s, color .2s, box-shadow .2s;
+}
+
+a:hover { color: #fff; border-color: var(--vermelho-vivo); box-shadow: 0 0 18px rgba(229, 38, 47, .3); }
+a:focus-visible { outline: 2px solid var(--vermelho-vivo); outline-offset: 3px; }
+
+/* Celular: os 4 links passam para 2 por linha */
+@media (max-width: 480px) {
+  body { grid-template-columns: repeat(2, 1fr); column-gap: 8px; row-gap: 8px; }
+  form { width: 100%; }
+}
